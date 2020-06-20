@@ -1,28 +1,10 @@
-FROM debian:jessie
-MAINTAINER Erik Dasque <erik@frenchguys.com>
+FROM qmkfm/base_container
+RUN apt-get update && apt-get -y upgrade && apt-get -y install python-pip
+RUN pip install nrfutil
 
-RUN apt-get update && apt-get install --no-install-recommends -y build-essential \
-    gcc \
-    unzip \
-    wget \
-    zip \
-    gcc-avr \
-    binutils-avr \
-    avr-libc \
-    dfu-programmer \
-    dfu-util \
-    gcc-arm-none-eabi \
-    binutils-arm-none-eabi \
-    libnewlib-arm-none-eabi \
-    git \
-    software-properties-common \
-    avrdude \
-    && rm -rf /var/lib/apt/lists/*
+ENV NRFSDK12_ROOT=/qmk_firmware/qmk_util/nRF5_SDK_12.3.0_d7731ad
+VOLUME /qmk_firmware
+WORKDIR /qmk_firmware
+# COPY . .
 
-ENV keyboard=ergodox
-ENV subproject=ez
-ENV keymap=default
-
-VOLUME /qmk
-WORKDIR /qmk
-CMD make clean ; make keyboard=${keyboard} subproject=${subproject} keymap=${keymap}
+CMD make clean
