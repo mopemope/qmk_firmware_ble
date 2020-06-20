@@ -1,4 +1,6 @@
 .dep
+*.a
+*.zip
 *.o
 *.bin
 *.eep
