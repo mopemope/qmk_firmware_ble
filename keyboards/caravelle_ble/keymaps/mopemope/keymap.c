@@ -165,8 +165,8 @@ enum custom_keycodes {
 #define PLUS   JP_PLUS
 #define LBRC   JP_LBRC
 #define RBRC   ALT_T(JP_RBRC)
-// #define GUI    KC_LGUI
-#define GUI    LT(RAISE,KC_LGUI)
+#define GUI    KC_LGUI
+///#define GUI    LT(RAISE,KC_LGUI)
 #define ZHTG   JP_ZHTG
 #define C_S    SFT_T(KC_C)
 #define ESC    KC_ESC
@@ -239,11 +239,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     TAB,     KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     KC_BSPC, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    KC_LCTL, D_M,     KC_S,    TC,      NC,      KC_R,    CAF2,           KC_F11,  KC_I,    AC,      EC,      KC_O,    H_M,     KC_RALT, \
+    KC_LCTL, D_M,     KC_S,    TC,      NC,      KC_R,    GUI,            KC_F11,  KC_I,    AC,      EC,      KC_O,    H_M,     KC_RALT, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    KC_LSFT, Z_S,     X_CT,    KC_C,    V_A,     GUI,     CAF7,           KC_F12,  LSPC,    J_C,     KC_K,    P_AL,    S_S,     KC_RSFT, \
+    KC_LSFT, Z_S,     X_CT,    KC_C,    V_A,     GUI,     PSCR,           KC_F12,  LSPC,    J_C,     KC_K,    P_AL,    S_S,     KC_RSFT, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-                               PSCR,    KC_LALT, KC_LCTL, SPC,            ENT,     KC_RCTL, KC_RALT, KC_DEL  \
+                               GUI,     KC_LALT, KC_LCTL, SPC,            ENT,     KC_RCTL, KC_RALT, KC_DEL  \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
   [LOWER] = LAYOUT( // OK
@@ -272,9 +272,9 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     ENT_DFU, _____,   _____,   KUP,     _____,   WRKSP1,                           UWRKSP,  PGDN,    GU,      PGUP,    DEL,     _____,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    DELBNDS, _____,   KLEFT,   KDOWN,   KRIGHT,  WRKSP2,   _____,          PSCR,   DWRKSP,  GL,      GD,      GR,      _____,   _____,   \
+    DELBNDS, _____,   KLEFT,   KDOWN,   KRIGHT,  WRKSP2,   CAF2,          PSCR,   DWRKSP,  GL,      GD,      GR,      _____,   _____,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    ENT_SLP, _____,   _____,   COPY,    PASTE,   GUI,      _____,          BATT_LV,BTN1,    BTN2,    PSCR,    GH,      _____,   _____,   \
+    ENT_SLP, _____,   _____,   COPY,    PASTE,   GUI,      CAF7,          BATT_LV,BTN1,    BTN2,    PSCR,    GH,      _____,   _____,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                _____,   _____,   _____,    _____,          _____,  _____,   _____,   _____  \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
