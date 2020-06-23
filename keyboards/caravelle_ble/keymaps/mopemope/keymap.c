@@ -98,6 +98,8 @@ enum custom_keycodes {
 #define ENT   LT(LOWER,KC_ENT)
 #define CENT   CTL_T(KC_ENT)
 #define BSPC   RCTL_T(KC_BSPC)
+#define CTL    CTL_T(KC_BSPC)
+#define ALT    ALT_T(KC_DEL)
 #define SBSPC  SFT_T(KC_BSPC)
 #define ABSPC  ALT_T(KC_BSPC)
 #define CBSPC  CTL_T(KC_BSPC)
@@ -240,13 +242,13 @@ extern keymap_config_t keymap_config;
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [QGMLWY] = LAYOUT( // OK
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    XXXXX,   KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     XXXXX,   \
+    XXXXX,   KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     BSP,     \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     XXXXX,   D_M,     KC_S,    TC,      NC,      KC_R,    XXXXX,          XXXXX,   KC_I,    AC,      EC,      KC_O,    H_M,     XXXXX,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
     XXXXX,   Z_S,     KC_X,    KC_C,    KC_V,    GUI,     XXXXX,          XXXXX,   KC_F12,  KC_J,    KC_K,    KC_P,    S_S,     XXXXX,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-                               ESC,     KC_LSFT, KC_LALT, SPC,            ENT,     KC_RCTL, KC_RSFT, DEL     \
+                               ESC,     KC_LSFT, ALT,     SPC,            ENT,     CTL,     KC_RSFT, DEL     \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
   [LOWER] = LAYOUT( // OK
