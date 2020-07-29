@@ -2,6 +2,7 @@
 *.a
 *.zip
 *.o
+/*.a
 *.bin
 *.eep
 *.elf
