@@ -231,10 +231,10 @@ enum custom_keycodes {
 #define BTN2   KC_BTN2
 #define BTN1   KC_BTN1
 #define ASTG   KC_ASTG
-#define C_V LCTL(KC_V)
-#define M_V LALT(KC_V)
-#define C_LT LCTL(JP_LT)
-#define C_GT LCTL(JP_GT)
+#define C_V    LCTL(KC_V)
+#define M_V    LALT(KC_V)
+#define C_LT   LCTL(JP_LT)
+#define C_GT   LCTL(JP_GT)
 
 extern keymap_config_t keymap_config;
 
@@ -245,13 +245,13 @@ extern keymap_config_t keymap_config;
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [QGMLWY] = LAYOUT( // OK
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    XXXXX,   KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     XXXXX,   \
+    TAB,     KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     XXXXX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    XXXXX,   D_M,     KC_S,    TC,      NC,      KC_R,    XXXXX,          ZHTG,    KC_I,    AC,      EC,      KC_O,    H_M,     XXXXX,   \
+    KUP,     D_M,     KC_S,    TC,      NC,      KC_R,    XXXXX,          XXXXX,   KC_I,    AC,      EC,      KC_O,    H_M,     KDOWN,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    XXXXX,   Z_S,     X_CT,    KC_C,    KC_V,    GUI,     XXXXX,          XXXXX,   KC_F12,  KC_J,    KC_K,    P_AL,    S_S,     XXXXX,   \
+    CLEFT,   Z_S,     X_CT,    KC_C,    KC_V,    GUI,     XXXXX,          XXXXX,   KC_F12,  KC_J,    KC_K,    P_AL,    S_S,     CRIGHT,  \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-                               KC_LSFT, KC_LSFT, ALT,     SPC,            ENT,     CTL,     KC_RSFT, KC_RSFT \
+                               GUI,     KC_LSFT, ALT,     SPC,            ENT,     CTL,     KC_RSFT, XXXXX   \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
   [LOWER] = LAYOUT( // OK
