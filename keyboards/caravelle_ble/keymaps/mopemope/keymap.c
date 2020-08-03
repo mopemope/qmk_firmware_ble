@@ -43,7 +43,10 @@ enum custom_keycodes {
     CXCF,
     CXCB,
     CXCS,
-    CXO
+    CXO,
+    CXU,
+    CCN,
+    CCP
 };
 
 #define QGMLWY  0
@@ -192,7 +195,7 @@ enum custom_keycodes {
 #define CSL    LCTL(JP_SLSH)
 #define CF     LCTL(KC_F)
 #define CMN    LALT(LCTL(KC_N))
-#define CMM     LALT(LCTL(KC_M))
+#define CMM    LALT(LCTL(KC_M))
 #define CMD    LALT(LCTL(JP_DOT))
 #define CMY    LALT(LCTL(JP_YEN))
 #define CG     LCTL(KC_G)
@@ -300,7 +303,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [COMBA] = LAYOUT( // OK
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    _____,   ZHTG,    XXXXX,   CMM,     CL,      APERC,                            _____,   CXCF,    _____,   CXCB,    _____,   _____,   \
+    _____,   ZHTG,    XXXXX,   CMM,     CL,      APERC,                            _____,   CXCF,    CXU,     CXCB,    _____,   _____,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     _____,   MD,      CXCS,    CT,      CMN,     MX,      _____,          _____,   _____,   _____,   CQ,      CXO,     CAT,     _____,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
@@ -311,11 +314,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [COMBN] = LAYOUT( // OK
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    _____,   _____,   CG,      CMM,     CL,      _____,                            CMY,     MLEFT,   CP,      MRIGHT,  MD,      _____,   \
+    _____,   _____,   CG,      CMM,     CL,      _____,                            CMY,     CCP,     CP,      CCN,     MD,      _____,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     _____,   TAB,     CS,      CT,      _____,   _____,   _____,          _____,   MSCLN,   CLEFT,   CN,      CRIGHT,  CAT,     _____,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    _____,   _____,   CX,      CRET,    CSPC,    _____,   _____,          _____,   MCOM,    MDOT,    CCOM,    CDOT,    CSL,     _____,   \
+    _____,   _____,   CX,      CRET,    CSPC,    _____,   _____,          _____,   MCOM,    MDOT,    CCOM,    CDOT,    CXU,     _____,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                _____,   _____,   _____,   _____,          _____,   MLT,     MGT,     _____   \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -443,6 +446,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case CXO:
     if (record->event.pressed) {
       SEND_STRING(SS_LCTRL("x") "o");
+    }
+    return false;
+  case CXU:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCTRL("x") "u");
+    }
+    return false;
+  case CCN:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCTRL("c") "n");
+    }
+    return false;
+  case CCP:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCTRL("c") "p");
     }
     return false;
   }
