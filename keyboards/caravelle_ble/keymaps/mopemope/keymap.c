@@ -188,6 +188,8 @@ enum custom_keycodes {
 #define DG5    DF(GAME5)
 #define DG6    DF(GAME6)
 #define DG7    DF(GAME7)
+#define TGR    TG(MISCR)
+#define TGL    TG(MISCL)
 #define SELA   LCTL(KC_A)
 #define COPY   LCTL(KC_C)
 #define PASTE  LCTL(KC_V)
@@ -250,7 +252,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     TAB,     KC_Q,    KC_G,    KC_M,    KC_L,    KC_W,                             KC_Y,    KC_F,    KC_U,    KC_B,    BSP,     XXXXX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    KUP,     D_M,     KC_S,    TC,      NC,      KC_R,    XXXXX,          XXXXX,   KC_I,    AC,      EC,      KC_O,    H_M,     KDOWN,   \
+    TGL,     D_M,     KC_S,    TC,      NC,      KC_R,    XXXXX,          XXXXX,   KC_I,    AC,      EC,      KC_O,    H_M,     TGR,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
     CLEFT,   Z_S,     X_CT,    KC_C,    KC_V,    GUI,     XXXXX,          XXXXX,   KC_F12,  KC_J,    KC_K,    P_AL,    S_S,     CRIGHT,  \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
